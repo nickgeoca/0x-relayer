@@ -65,3 +65,5 @@ typescript/lib
 
 # sqlite DB
 database.sqlite
+
+ts/lib/*

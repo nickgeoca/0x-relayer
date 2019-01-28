@@ -11,25 +11,29 @@ export const PERMANENT_CLEANUP_INTERVAL_MS = 10 * 1000; // tslint:disable-line c
 // Max number of entities per page
 export const MAX_PER_PAGE = 1000;
 // Default network id to use when not specified
-export const NETWORK_ID = !_.isUndefined(process.env.NETWORK_ID) ? _.parseInt(process.env.NETWORK_ID) : 42;
+export const NETWORK_ID = !_.isUndefined(process.env.NETWORK_ID) ? _.parseInt(process.env.NETWORK_ID) : 50;
 // The fee recipient for orders
 export const FEE_RECIPIENT = !_.isUndefined(process.env.FEE_RECIPIENT)
     ? process.env.FEE_RECIPIENT
-    : '0x0000000000000000000000000000000000000000';
+    : '0x667deb5a98f77052cf561658575cf1530ee42c7a';
 // A flat fee in ZRX that should be charged to the order maker
 export const MAKER_FEE_ZRX_UNIT_AMOUNT = !_.isUndefined(process.env.MAKER_FEE_ZRX_UNIT_AMOUNT)
     ? new BigNumber(process.env.MAKER_FEE_ZRX_UNIT_AMOUNT)
-    : new BigNumber(0);
+    : new BigNumber(100);
 // A flat fee in ZRX that should be charged to the order taker
 export const TAKER_FEE_ZRX_UNIT_AMOUNT = !_.isUndefined(process.env.TAKER_FEE_ZRX_UNIT_AMOUNT)
     ? new BigNumber(process.env.TAKER_FEE_ZRX_UNIT_AMOUNT)
-    : new BigNumber(0);
+    : new BigNumber(100);
 // Whitelisted token addresses. Set to a '*' instead of an array to allow all tokens.
+export const WHITELISTED_TOKENS = "*";
+/*
 export const WHITELISTED_TOKENS: string[] | '*' = [
     '0x2002d3812f58e35f0ea1ffbf80a75a38c32175fa', // ZRX
     '0xd0a1e359811322d97991e03f863a0c30c2cf029c', // WETH
 ];
+*/
+
 // Ethereum RPC url
-export const RPC_URL = !_.isUndefined(process.env.RPC_URL) ? process.env.RPC_URL : 'https://kovan.infura.io/v3';
+export const RPC_URL = !_.isUndefined(process.env.RPC_URL) ? process.env.RPC_URL : 'localhost:8545';
 // Default ERC20 token precision
 export const DEFAULT_ERC20_TOKEN_PRECISION = 18;
