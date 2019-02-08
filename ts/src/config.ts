@@ -19,11 +19,11 @@ export const FEE_RECIPIENT = !_.isUndefined(process.env.FEE_RECIPIENT)
 // A flat fee in ZRX that should be charged to the order maker
 export const MAKER_FEE_ZRX_UNIT_AMOUNT = !_.isUndefined(process.env.MAKER_FEE_ZRX_UNIT_AMOUNT)
     ? new BigNumber(process.env.MAKER_FEE_ZRX_UNIT_AMOUNT)
-    : new BigNumber(100);
+    : new BigNumber(0);
 // A flat fee in ZRX that should be charged to the order taker
 export const TAKER_FEE_ZRX_UNIT_AMOUNT = !_.isUndefined(process.env.TAKER_FEE_ZRX_UNIT_AMOUNT)
     ? new BigNumber(process.env.TAKER_FEE_ZRX_UNIT_AMOUNT)
-    : new BigNumber(100);
+    : new BigNumber(0);
 // Whitelisted token addresses. Set to a '*' instead of an array to allow all tokens.
 export const WHITELISTED_TOKENS = "*";
 /*
@@ -37,3 +37,8 @@ export const WHITELISTED_TOKENS: string[] | '*' = [
 export const RPC_URL = !_.isUndefined(process.env.RPC_URL) ? process.env.RPC_URL : 'localhost:8545';
 // Default ERC20 token precision
 export const DEFAULT_ERC20_TOKEN_PRECISION = 18;
+
+
+console.log('Maker fee to relayer', MAKER_FEE_ZRX_UNIT_AMOUNT);
+console.log('Network ID', NETWORK_ID);
+console.log('Fee recepient', FEE_RECIPIENT);
